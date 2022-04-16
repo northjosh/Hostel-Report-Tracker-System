@@ -1,0 +1,68 @@
+body {
+  /* background-color: #d7a319; */
+  background-image: url("circuit-board.svg");
+  overflow-x: hidden;
+  color: #153d70;
+  width: fit-content;
+  margin: auto;
+}
+
+.right {
+  /* border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem; */
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-width: 0.3rem;
+  border-color: #d7a319;
+  padding: 2rem;
+  background-color: #153d70;
+  color: #d7a319;
+}
+
+h3 {
+  font-size: 3rem;
+}
+form {
+  color: #d7a319;
+}
+.illustration img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 5rem;
+}
+
+.illustration {
+  display: inline-flex;
+  padding: 1rem;
+}
+
+H1 {
+  letter-spacing: 1rem;
+}
+.header {
+  background-color: #d7a319;
+}
+tr th {
+  width: 14.3%;
+  color: #d7a319;
+  background-color: #153d70 !important;
+}
+
+.btn-color {
+  background-color: #d7a319;
+  outline-color: #d7a319;
+  color: #153d70;
+}
+
+.btn-color:hover {
+  color: white;
+  width: 10rem;
+  transition-duration: 3s;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e4f0ff;
+}
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
