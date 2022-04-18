@@ -21,21 +21,21 @@ body {
 
 h3 {
   font-size: 3rem;
+  letter-spacing: 0.5rem;
 }
 form {
   color: #d7a319;
 }
+
 .illustration img {
   width: 8rem;
   height: 8rem;
   border-radius: 5rem;
 }
 
-.illustration {
-  display: inline-flex;
-  padding: 1rem;
+textarea:active {
+  outline-color: #d7a319 !important;
 }
-
 H1 {
   letter-spacing: 1rem;
 }
