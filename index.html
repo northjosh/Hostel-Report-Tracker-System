@@ -20,27 +20,25 @@
       <!-- Header Row -->
       <div class="row header">
         <div class="col-md-3 text-center">
-          <img src="hostel-hub2.gif" alt="" />
+          <img src="hostel-hub1.gif" alt="" />
         </div>
         <div class="col-md-6 text-center">
           <br />
-          <h1>LEGON HOSTELS REPORT HUB</h1>
-          <p>
-            <i> <strong>Hostel-report Tracking System</strong></i>
-          </p>
+          <h1>UG STUDENTS HOSTEL REPORT HUB</h1>
+          <p><strong>Hostel-report Tracking System</strong></p>
         </div>
         <div class="col-md-3 text-center">
-          <img src="hostel-hub1.gif" alt="" />
+          <img src="hostel-hub2.gif" alt="" />
         </div>
       </div>
 
       <!-- Row 1 -->
       <div class="row">
         <!-- TAB SELECTION UPDATE -->
-        <nav class="d-flex justify-content-center">
+        <nav class="d-flex justify-content-center align-items-center dstyle">
           <div class="nav nav-tabs nav-center" id="nav-tab" role="tablist">
             <button
-              class="nav-link active"
+              class="nav-link bstyle active"
               id="nav-home-tab"
               data-bs-toggle="tab"
               data-bs-target="#nav-home"
@@ -52,7 +50,7 @@
               Check-In
             </button>
             <button
-              class="nav-link"
+              class="nav-link bstyle"
               id="nav-profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#nav-profile"
@@ -64,7 +62,7 @@
               Check Out
             </button>
             <button
-              class="nav-link"
+              class="nav-link bstyle"
               id="nav-contact-tab"
               data-bs-toggle="tab"
               data-bs-target="#nav-contact"
@@ -110,11 +108,13 @@
                             name="fname"
                             id="Fname"
                             placeholder="eg.: Kofi"
+                            required
                           />
                         </div>
                         <div class="col-md-6">
                           <label for="Lname" class="form-label">Last Name</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             name="lname"
@@ -125,6 +125,7 @@
                         <div class="col-12">
                           <label for="Sid" class="form-label">Student ID</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Sid"
@@ -135,6 +136,7 @@
                         <div class="col-12">
                           <label for="Phone" class="form-label">Phone Number</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Phone"
@@ -145,6 +147,7 @@
                         <div class="col-md-12">
                           <label for="Rnumber" class="form-label">Room Number</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Rnumber"
@@ -177,7 +180,7 @@
                     <div class="d-flex justify-content-center align-items-center">
                       <h3>Check-Out</h3>
                     </div>
-                    <!--Check-in Animation Illustration -->
+                    <!--Check-out Animation Illustration -->
                     <div class="d-flex justify-content-center illustration">
                       <img src="check-out.gif" alt="" />
                     </div>
@@ -189,6 +192,7 @@
                         <div class="col-md-6">
                           <label for="Fname" class="form-label">First Name</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Fname"
@@ -199,6 +203,7 @@
                         <div class="col-md-6">
                           <label for="Lname" class="form-label">Last Name</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Lname"
@@ -209,6 +214,7 @@
                         <div class="col-12">
                           <label for="Sid" class="form-label">Student ID</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Sid"
@@ -219,6 +225,7 @@
                         <div class="col-12">
                           <label for="Phone" class="form-label">Phone Number</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Phone"
@@ -229,6 +236,7 @@
                         <div class="col-md-12">
                           <label for="Rnumber" class="form-label">Room Number</label>
                           <input
+                            required
                             type="text"
                             class="form-control"
                             id="Rnumber"
@@ -254,15 +262,42 @@
             aria-labelledby="nav-contact-tab"
           >
             <div class="d-flex justify-content-center">
-              <div class="row right illustration">
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                  <img class="img-fluid" src="complaint.gif" alt="" />
+              <div class="row right illustration1">
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                  <img src="complaint.gif" alt="" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                   <h4>Tell Us Your Problem</h4>
                   <p>Problems relating to your accomodation can be posted here for rectification</p>
-                  <textarea class="form-control m-1" rows="5"></textarea>
-                  <button class="btn btn-color" type="submit">Submit</button>
+                  <form action="" class="row g-3">
+                    <div class="col-md-6">
+                      <input
+                        required
+                        type="text"
+                        class="form-control"
+                        placeholder="Full name"
+                        aria-label="Full name"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        required
+                        type="text"
+                        class="form-control"
+                        placeholder="Student ID"
+                        aria-label="Student ID"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <textarea
+                        placeholder="Complain goes here"
+                        class="form-control m-1"
+                        rows="5"
+                      ></textarea>
+                    </div>
+
+                    <button class="text-center btn btn-color" type="submit">Submit</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -276,7 +311,6 @@
           <table class="table">
             <thead class="text-center">
               <tr>
-                <th>Status</th>
                 <th>Full Name</th>
                 <th>Student ID</th>
                 <th>Phone Number</th>
@@ -286,17 +320,7 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody class="text-center hist">
-              <tr>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-                <td>I am Happy</td>
-              </tr>
-            </tbody>
+            <tbody class="text-center hist"></tbody>
           </table>
         </div>
       </div>
@@ -306,7 +330,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
     <script src="index.js"></script>
   </body>
 </html>

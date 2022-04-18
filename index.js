@@ -8,14 +8,15 @@ var checkedOut = [];
 
 checkIn.addEventListener("submit", (e) => {
   try {
+    let day = new Date();
     var newEntry = {
       firstName: checkIn["fname"].value,
       lastName: checkIn["lname"].value,
       id: checkIn["id"].value,
       phone: checkIn["phone"].value,
       room: checkIn["room"].value,
-      date: "Monday",
-      time: "2:50pm",
+      date: day.toDateString(),
+      time: `${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`,
       status: "Checked In",
     };
   } catch (err) {
@@ -72,8 +73,7 @@ checkOut.addEventListener("submit", () => {
 function updateHistory(history) {
   let showHistory = history.map((record) => {
     return `<tr>
-        <td>${record.firstName}</td>
-        <td>${record.lastName}</td>
+        <td>${record.lastName} ${record.firstName}</td>
         <td>${record.id}</td>
         <td>${record.phone}</td>
         <td>${record.room}</td>
