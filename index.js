@@ -7,6 +7,7 @@ const currentDate = new Date();
 // var checkedIn = [];
 // var checkedOut = [];
 //declaring variabless
+
 if (JSON.parse(window.localStorage.getItem("history")) == null) {
   var checkHistory = [];
 } else {
@@ -28,7 +29,6 @@ if (window.localStorage.getItem("checkedOut") == null) {
 updateHistory(checkHistory);
 
 checkIn.addEventListener("submit", (e) => {
-<<<<<<< HEAD
   var newEntry = {
     firstName: checkIn["fname"].value,
     lastName: checkIn["lname"].value,
@@ -59,22 +59,6 @@ checkIn.addEventListener("submit", (e) => {
     window.localStorage.setItem("history", JSON.stringify(checkHistory));
     window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
     alert("You have successfully checked in 2");
-=======
-  try {
-    let day = new Date();
-    var newEntry = {
-      firstName: checkIn["fname"].value,
-      lastName: checkIn["lname"].value,
-      id: checkIn["id"].value,
-      phone: checkIn["phone"].value,
-      room: checkIn["room"].value,
-      date: day.toDateString(),
-      time: `${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`,
-      status: "Checked In",
-    };
-  } catch (err) {
-    alert("error " + err);
->>>>>>> 47613718fe82e8af89b967b20c9ae4acb2b6fc59
   }
 
   updateHistory(checkHistory);
@@ -94,7 +78,7 @@ checkOut.addEventListener("submit", () => {
 
   if (checkedOut.length > 0) {
     checkedOut.forEach((record) => {
-      if (newEntry.id === record.id && newEntry.status === record.status) {
+      if (newEntry.id === record.id && newEntry.day === record.day) {
         // do popover to show person has already checked out
         alert("You have already checked out!");
       } else {
@@ -112,6 +96,7 @@ checkOut.addEventListener("submit", () => {
     window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
     alert("You have successfully checked out 2");
   }
+
   updateHistory(checkHistory);
 });
 
