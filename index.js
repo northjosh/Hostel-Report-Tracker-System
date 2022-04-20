@@ -1,5 +1,6 @@
 const checkIn = document.forms[0];
 const checkOut = document.forms[1];
+const complaint = document.forms[2];
 const hist = document.querySelector(".hist");
 const currentDate = new Date();
 
@@ -41,25 +42,32 @@ checkIn.addEventListener("submit", (e) => {
   };
 
   // console.log(newEntry);
-  if (checkedIn.length > 0) {
-    for (i = 0; i < checkedIn.length; i++) {
-      if (newEntry.id == checkedIn[i].id) {
-        alert("You have already checked in!");
-      } else {
-        checkHistory.push(newEntry);
-        checkedIn.push(newEntry);
-        window.localStorage.setItem("history", JSON.stringify(checkHistory));
-        window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
-        alert("You have successfully checked in 1");
-      }
-    }
-  } else {
-    checkHistory.push(newEntry);
-    checkedIn.push(newEntry);
-    window.localStorage.setItem("history", JSON.stringify(checkHistory));
-    window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
-    alert("You have successfully checked in 2");
-  }
+
+  // if (checkedIn.length > 0) {
+  //   for (i = 0; i < checkedIn.length; i++) {
+  //     if (newEntry.id == checkedIn[i].id) {
+  //       alert("You have already checked in!");
+  //     } else {
+  //       checkHistory.push(newEntry);
+  //       checkedIn.push(newEntry);
+  //       window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  //       window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
+  //       alert("You have successfully checked in 1");
+  //     }
+  //   }
+  // } else {
+  //   checkHistory.push(newEntry);
+  //   checkedIn.push(newEntry);
+  //   window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  //   window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
+  //   alert("You have successfully checked in 2");
+  // }
+
+  checkHistory.push(newEntry);
+  checkedIn.push(newEntry);
+  window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
+  alert("You have successfully checked in!");
 
   updateHistory(checkHistory);
 });
@@ -76,30 +84,41 @@ checkOut.addEventListener("submit", () => {
     status: "Checked Out",
   };
 
-  if (checkedOut.length > 0) {
-    checkedOut.forEach((record) => {
-      if (newEntry.id === record.id && newEntry.day === record.day) {
-        // do popover to show person has already checked out
-        alert("You have already checked out!");
-      } else {
-        checkHistory.push(newEntry);
-        window.localStorage.setItem("history", JSON.stringify(checkHistory));
-        checkedOut.push(newEntry);
-        window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
-        alert("You have successfully checked out 1");
-      }
-    });
-  } else {
-    checkHistory.push(newEntry);
-    window.localStorage.setItem("history", JSON.stringify(checkHistory));
-    checkedOut.push(newEntry);
-    window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
-    alert("You have successfully checked out 2");
-  }
+  // if (checkedOut.length > 0) {
+  //   checkedOut.forEach((record) => {
+  //     if (newEntry.id === record.id && newEntry.day === record.day) {
+  //       // do popover to show person has already checked out
+  //       alert("You have already checked out!");
+  //     } else {
+  //       checkHistory.push(newEntry);
+  //       window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  //       checkedOut.push(newEntry);
+  //       window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
+  //       alert("You have successfully checked out 1");
+  //     }
+  //   });
+  // } else {
+  //   checkHistory.push(newEntry);
+  //   window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  //   checkedOut.push(newEntry);
+  //   window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
+  //   alert("You have successfully checked out 2");
+  // }
+
+  checkHistory.push(newEntry);
+  window.localStorage.setItem("history", JSON.stringify(checkHistory));
+  checkedOut.push(newEntry);
+  window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
+  alert("You have successfully checked out!");
 
   updateHistory(checkHistory);
 });
 
+complaint.addEventListener("submit", () => {
+  alert("Your complaint has been sent!");
+});
+
+//fills the table with recent checkins/outs
 function updateHistory(history) {
   let showHistory = history.map((record) => {
     return `<tr>
@@ -141,3 +160,34 @@ function getDate() {
     currentDate.getFullYear()
   );
 }
+
+// unsused functions
+// function deleteEntry(entry, arr) {
+//   for (i = 0; i < arr.length; i++)
+//     if (entry.id == arr[i].id) {
+//       checkedOut.splice(i);
+//     }
+// }
+
+// function validateEntry(newEntry, arr, arrName, oppArray, message) {
+//   if (arr.length > 0) {
+//     for (i = 0; i < arr.length; i++) {
+//       if (newEntry.id == arr[i].id) {
+//         alert(`You have already ${message}`);
+//       } else {
+//         checkHistory.push(newEntry);
+//         checkedIn.push(newEntry);
+//         window.localStorage.setItem("history", JSON.stringify(checkHistory));
+//         window.localStorage.setItem(arrName, JSON.stringify(checkedIn));
+//         alert(`You have successfully ${message}1`);
+//         deleteEntry(newEntry, oppArray);
+//       }
+//     }
+//   } else {
+//     checkHistory.push(newEntry);
+//     checkedIn.push(newEntry);
+//     window.localStorage.setItem("history", JSON.stringify(checkHistory));
+//     window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
+//     alert(`You have successfully ${message} 2`);
+//   }
+// }
