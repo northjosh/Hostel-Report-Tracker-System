@@ -7,6 +7,7 @@ const currentDate = new Date();
 // var checkHistory = JSON.parse(window.localStorage.getItem("history"));
 // var checkedIn = [];
 // var checkedOut = [];
+
 //declaring variabless
 
 if (JSON.parse(window.localStorage.getItem("history")) == null) {
@@ -63,8 +64,8 @@ checkIn.addEventListener("submit", (e) => {
   //   alert("You have successfully checked in 2");
   // }
 
-  checkHistory.push(newEntry);
-  checkedIn.push(newEntry);
+  checkHistory.unshift(newEntry);
+  checkedIn.unshift(newEntry);
   window.localStorage.setItem("history", JSON.stringify(checkHistory));
   window.localStorage.setItem("checkedIn", JSON.stringify(checkedIn));
   alert("You have successfully checked in!");
@@ -105,9 +106,9 @@ checkOut.addEventListener("submit", () => {
   //   alert("You have successfully checked out 2");
   // }
 
-  checkHistory.push(newEntry);
+  checkHistory.unshift(newEntry);
   window.localStorage.setItem("history", JSON.stringify(checkHistory));
-  checkedOut.push(newEntry);
+  checkedOut.unshift(newEntry);
   window.localStorage.setItem("checkedOut", JSON.stringify(checkedOut));
   alert("You have successfully checked out!");
 
